@@ -4,9 +4,11 @@
   "description": "Conway's Game of Life in TypeScript",
   "scripts": {
     "build": "webpack-cli",
+    "serve": "webpack-dev-server --no-inline",
     "start": "node build/bundle.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "test": "ts-node node_modules/jasmine/bin/jasmine"
+    "jasmine": "ts-node node_modules/jasmine/bin/jasmine",
+    "karma": "karma start"
   },
   "author": "Johannes Diemke",
   "license": "MIT",
@@ -14,10 +16,17 @@
     "@types/jasmine": "2.8.7",
     "html-webpack-plugin": "3.2.0",
     "jasmine": "3.1.0",
+    "karma": "2.0.2",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "1.1.2",
+    "karma-jasmine-html-reporter": "1.1.0",
+    "karma-webpack": "3.0.0",
     "ts-loader": "4.3.0",
+    "ts-node": "6.0.3",
     "tslint": "5.10.0",
     "typescript": "2.8.3",
     "webpack": "4.8.3",
-    "webpack-cli": "2.1.3"
+    "webpack-cli": "2.1.3",
+    "webpack-dev-server": "3.1.4"
   }
 }
