@@ -9,7 +9,13 @@
       true,
       "single"
     ],
-    "no-console": false
+    "no-console": false,
+    "no-angle-bracket-type-assertion": false,
+    "array-type": [
+      true,
+      "generic"
+    ],
+    "trailing-comma": false
   },
   "rulesDirectory": []
 }
