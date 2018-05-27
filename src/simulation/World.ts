@@ -45,7 +45,7 @@ export class World {
     }
 
     private mod(num, mo): number {
-        return ((num % mo) + mo) % mo;
+        return (num + mo) % mo;
     }
 
 }
