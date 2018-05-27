@@ -52,7 +52,7 @@ export class PrettyWorldRenderer {
         for (let i: number = 0; i < world.getHeight(); i++) {
             for (let j: number = 0; j < world.getWidth(); j++) {
                 if (world.getCellAt(j, i).populated) {
-                    this.context.fillStyle = '#ff8c00';
+                    this.context.fillStyle = '#aaffaa';
                     this.roundRect(j * (this.cellSize + this.cellSpacing) + this.worldBorder,
                         i * (this.cellSize + this.cellSpacing) + this.worldBorder,
                         this.cellSize, this.cellSize, this.cellRadius);

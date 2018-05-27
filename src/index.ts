@@ -6,4 +6,25 @@ const worldRenderer: PrettyWorldRenderer = new PrettyWorldRenderer(gameOfLife);
 
 document.body.appendChild(worldRenderer.getCanvas());
 
-gameOfLife.start();
+const button = document.createElement('button');
+button.textContent = 'Start';
+document.body.appendChild(button);
+let toggle: boolean = false;
+button.onclick = () => {
+
+    if (toggle) {
+        button.textContent = 'Start';
+        gameOfLife.stop();
+    } else {
+        gameOfLife.start();
+        button.textContent = 'Stop';
+    }
+    toggle = !toggle;
+};
+
+const buttonRand = document.createElement('button');
+buttonRand.textContent = 'Randomize';
+document.body.appendChild(buttonRand);
+buttonRand.onclick = () => {
+    gameOfLife.randomize();
+};

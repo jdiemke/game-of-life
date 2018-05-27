@@ -9,8 +9,12 @@ export class GameOfLife {
 
     constructor(private width: number, private height: number) {
         this.generation = new World(width, height);
-        this.generation.randomize();
         this.subject = new BehaviorSubject(this.generation);
+    }
+
+    public randomize(): void {
+        this.generation.randomize();
+        this.updateGeneration(this.generation);
     }
 
     public generationChanged(): Observable<World> {
@@ -18,7 +22,7 @@ export class GameOfLife {
     }
 
     public start(): void {
-        this.subscription = timer(1000, 500).subscribe(() => {
+        this.subscription = timer(0, 500).subscribe(() => {
             this.updateGeneration(this.computeNextGeneration());
         });
     }
