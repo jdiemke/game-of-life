@@ -41,8 +41,7 @@ export class World {
     }
 
     public getCellAt(x: number, y: number): Cell {
-        return this.cells[this.mod(y,
-            this.height) * this.height + this.mod(x, this.width)];
+        return this.cells[this.mod(y, this.height) * this.width + this.mod(x, this.width)];
     }
 
     private mod(num, mo): number {

@@ -74,14 +74,15 @@ export class GameOfLife {
     }
 
     private getPopulatedNeighbourCounr(x: number, y: number, current: World): number {
-        const neighbours: Array<[number, number]> = [
-            [x - 1, y - 1], [x, y - 1], [x + 1, y - 1], [x - 1, y],
-            [x + 1, y], [x - 1, y + 1], [x, y + 1], [x + 1, y + 1]
-        ];
+        let count: number = 0;
 
-        return neighbours.reduce((prev, k): number => {
-            return prev + (current.getCellAt(k[0], k[1]).populated ? 1 : 0);
-        }, 0);
+        for (let i: number = -1; i <= 1; i++) {
+            for (let j: number = -1; j <= 1; j++) {
+                count += current.getCellAt(x + j, y + i).populated ? 1 : 0;
+            }
+        }
+
+        return count - (current.getCellAt(x, y).populated ? 1 : 0);
     }
 
 }
