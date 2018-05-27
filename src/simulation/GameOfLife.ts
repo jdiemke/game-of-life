@@ -64,17 +64,11 @@ export class GameOfLife {
     private computeNewCellValueByCount(x: number, y: number, current: World, count): boolean {
         if (!current.getCellAt(x, y).populated && count === 3) {
             return true;
-        }
-
-        if (current.getCellAt(x, y).populated && (count < 2 || count > 3)) {
+        } else if (current.getCellAt(x, y).populated && (count < 2 || count > 3)) {
             return false;
+        } else {
+            return current.getCellAt(x, y).populated;
         }
-
-        if (current.getCellAt(x, y).populated && (count === 2 || count === 3)) {
-            return true;
-        }
-
-        return false;
     }
 
     private getPopulatedNeighbourCounr(x: number, y: number, current: World): number {
