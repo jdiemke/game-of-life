@@ -22,7 +22,7 @@ export class GameOfLife {
     }
 
     public start(): void {
-        this.subscription = timer(0, 500).subscribe(() => {
+        this.subscription = timer(0, 250).subscribe(() => {
             this.updateGeneration(this.computeNextGeneration());
         });
     }
