@@ -1,8 +1,8 @@
+import { GameOfLife } from '../simulation/GameOfLife';
 import { World } from '../simulation/World';
 
 export class PrettyWorldRenderer {
 
-    private world: World;
     private canvas: HTMLCanvasElement;
     private context: CanvasRenderingContext2D;
     private cellSpacing: number = 5;
@@ -10,35 +10,38 @@ export class PrettyWorldRenderer {
     private cellRadius: number = 5;
     private cellSize: number = 20;
 
-    constructor(world: World) {
-        this.world = world;
+    constructor(world: GameOfLife) {
         this.canvas = document.createElement('canvas');
-        this.canvas.width = this.world.getWidth() * (this.cellSize + this.cellSpacing)
+        this.canvas.width = world.getWidth() * (this.cellSize + this.cellSpacing)
             - this.cellSpacing + 2 * (this.worldBorder);
-        this.canvas.height = this.world.getHeight() * (this.cellSize + this.cellSpacing)
+        this.canvas.height = world.getHeight() * (this.cellSize + this.cellSpacing)
             - this.cellSpacing + 2 * (this.worldBorder);
         this.context = this.canvas.getContext('2d');
+        world.generationChanged().subscribe((world2: World) => {
+            this.draw(world2);
+            console.warn('new world');
+        });
     }
 
     public getCanvas(): HTMLCanvasElement {
         return this.canvas;
     }
 
-    public draw(): void {
+    public draw(world: World): void {
         this.context.fillStyle = 'white';
         this.context.fillRect(
             0,
             0,
-            this.world.getWidth() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder),
-            this.world.getHeight() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder)
+            world.getWidth() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder),
+            world.getHeight() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder)
         );
 
         this.context.fillStyle = 'black';
         this.roundRect(
             0,
             0,
-            this.world.getWidth() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder),
-            this.world.getHeight() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder),
+            world.getWidth() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder),
+            world.getHeight() * (this.cellSize + this.cellSpacing) - this.cellSpacing + 2 * (this.worldBorder),
             14
         );
 
@@ -46,9 +49,9 @@ export class PrettyWorldRenderer {
         this.context.strokeStyle = '#444444';
         this.context.lineWidth = 1;
 
-        for (let i: number = 0; i < this.world.getHeight(); i++) {
-            for (let j: number = 0; j < this.world.getWidth(); j++) {
-                if (this.world.getCellAt(j, i).populated) {
+        for (let i: number = 0; i < world.getHeight(); i++) {
+            for (let j: number = 0; j < world.getWidth(); j++) {
+                if (world.getCellAt(j, i).populated) {
                     this.context.fillStyle = '#ff8c00';
                     this.roundRect(j * (this.cellSize + this.cellSpacing) + this.worldBorder,
                         i * (this.cellSize + this.cellSpacing) + this.worldBorder,

@@ -1,14 +1,9 @@
-import { World } from './simulation/World';
-import { PrettyWorldRenderer } from './world-renderer/PrettyWorldRenderer';
+import { GameOfLife } from './simulation/GameOfLife';
+import { PrettyWorldRenderer } from './world-renderer';
 
-const world: World = new World(30, 15);
-const prettyWorldRenderer: PrettyWorldRenderer = new PrettyWorldRenderer(world);
+const gameOfLife: GameOfLife = new GameOfLife(15, 15);
+const worldRenderer: PrettyWorldRenderer = new PrettyWorldRenderer(gameOfLife);
 
-document.body.appendChild(prettyWorldRenderer.getCanvas());
+document.body.appendChild(worldRenderer.getCanvas());
 
-prettyWorldRenderer.draw();
-
-setInterval(() => {
-    world.randomize();
-    prettyWorldRenderer.draw();
-}, 1000);
+gameOfLife.start();
