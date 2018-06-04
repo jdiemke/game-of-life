@@ -8,7 +8,8 @@
     "start": "node build/bundle.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "jasmine": "ts-node node_modules/jasmine/bin/jasmine JASMINE_CONFIG_PATH=jasmine.json",
-    "karma": "karma start"
+    "karma": "karma start",
+    "test": "npm run karma"
   },
   "author": "Johannes Diemke",
   "license": "MIT",
