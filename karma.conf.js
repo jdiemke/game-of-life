@@ -40,6 +40,6 @@ module.exports = (config) => {
             }
         },
         logLevel: config.LOG_INFO,
-        singleRun: false
+        singleRun: true
     });
 };
