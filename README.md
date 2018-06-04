@@ -3,6 +3,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/jdiemke/game-of-life.svg)](https://github.com/jdiemke/game-of-life/network)
 [![GitHub stars](https://img.shields.io/github/stars/jdiemke/game-of-life.svg)](https://github.com/jdiemke/game-of-life/stargazers)
 [![GitHub license](https://img.shields.io/github/license/jdiemke/game-of-life.svg)](https://github.com/jdiemke/game-of-life/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/jdiemke/game-of-life.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjdiemke%2Fgame-of-life)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/jdiemke/game-of-life.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjdiemke%2Fgame-of-life) [![Greenkeeper badge](https://badges.greenkeeper.io/jdiemke/game-of-life.svg)](https://greenkeeper.io/)
 
 Conway's Game of Life using Webpack, Jasmine, Karma, TypeScript and RxJS. 
