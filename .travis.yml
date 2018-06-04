@@ -3,6 +3,8 @@ dist: trusty
 sudo: required
 node_js:
     - node
+script:
+    - npm run lint
 
 addons:
   chrome: stable
