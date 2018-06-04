@@ -5,11 +5,9 @@
   "scripts": {
     "build": "webpack-cli",
     "serve": "webpack-dev-server --no-inline --open",
-    "start": "node build/bundle.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "jasmine": "ts-node node_modules/jasmine/bin/jasmine JASMINE_CONFIG_PATH=jasmine.json",
-    "karma": "karma start",
-    "test": "npm run karma"
+    "karma": "karma start"
   },
   "author": "Johannes Diemke",
   "license": "MIT",
