@@ -32,7 +32,7 @@ module.exports = (config) => {
             suppressSkipped: true,  // do not print information about skipped tests
             showSpecTiming: false // print the time elapsed for each spec
         },
-        browsers: ['ChromeHeadlessNoSandbox'],
+        browsers: ['Chrome'],
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
@@ -40,6 +40,6 @@ module.exports = (config) => {
             }
         },
         logLevel: config.LOG_INFO,
-        singleRun: true
+        singleRun: false
     });
 };
