@@ -23,11 +23,11 @@
     "karma-spec-reporter": "0.0.32",
     "karma-webpack": "3.0.0",
     "rxjs": "6.2.1",
-    "ts-loader": "4.4.1",
-    "ts-node": "6.1.2",
+    "ts-loader": "4.4.2",
+    "ts-node": "7.0.0",
     "tslint": "5.10.0",
     "typescript": "2.9.2",
-    "webpack": "4.12.0",
+    "webpack": "4.13.0",
     "webpack-cli": "3.0.8",
     "webpack-dev-server": "3.1.4"
   }
