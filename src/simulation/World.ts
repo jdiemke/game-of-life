@@ -1,9 +1,5 @@
-class Cell {
+import { Cell } from "./Cell";
 
-    constructor(public populated) { }
-}
-
-// tslint:disable-next-line:max-classes-per-file
 export class World {
 
     private width: number;
@@ -34,7 +30,7 @@ export class World {
         }
     }
 
-    public initializeCells(populated: boolean = false): void {
+    private initializeCells(populated: boolean = false): void {
         this.cells = new Array(this.width * this.height).fill(undefined).map(
             () => new Cell(populated)
         );

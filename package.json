@@ -6,7 +6,7 @@
     "build": "webpack-cli",
     "serve": "webpack-dev-server --open",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll --verbose --coverage"
   },
   "author": "Johannes Diemke",
   "license": "MIT",
