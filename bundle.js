@@ -2250,6 +2250,16 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\ncons
 
 /***/ }),
 
+/***/ "./src/simulation/Cell.ts":
+/*!********************************!*\
+  !*** ./src/simulation/Cell.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Cell = void 0;\nclass Cell {\n    constructor(populated) {\n        this.populated = populated;\n    }\n}\nexports.Cell = Cell;\n\n\n//# sourceURL=webpack://game-of-life/./src/simulation/Cell.ts?");
+
+/***/ }),
+
 /***/ "./src/simulation/GameOfLife.ts":
 /*!**************************************!*\
   !*** ./src/simulation/GameOfLife.ts ***!
@@ -2264,9 +2274,9 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexpo
 /*!*********************************!*\
   !*** ./src/simulation/World.ts ***!
   \*********************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.World = void 0;\nclass Cell {\n    constructor(populated) {\n        this.populated = populated;\n    }\n}\nclass World {\n    constructor(width, height) {\n        this.width = width;\n        this.height = height;\n        this.initializeCells();\n    }\n    getWidth() {\n        return this.width;\n    }\n    getHeight() {\n        return this.height;\n    }\n    randomize() {\n        for (let i = 0; i < this.height; i++) {\n            for (let j = 0; j < this.width; j++) {\n                const alife = Math.random() >= 0.5;\n                const cell = this.getCellAt(j, i);\n                cell.populated = alife;\n            }\n        }\n    }\n    initializeCells(populated = false) {\n        this.cells = new Array(this.width * this.height).fill(undefined).map(() => new Cell(populated));\n    }\n    getCellAt(x, y) {\n        return this.cells[this.mod(y, this.height) * this.width + this.mod(x, this.width)];\n    }\n    mod(num, mo) {\n        return (num + mo) % mo;\n    }\n}\nexports.World = World;\n\n\n//# sourceURL=webpack://game-of-life/./src/simulation/World.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.World = void 0;\nconst Cell_1 = __webpack_require__(/*! ./Cell */ \"./src/simulation/Cell.ts\");\nclass World {\n    constructor(width, height) {\n        this.width = width;\n        this.height = height;\n        this.initializeCells();\n    }\n    getWidth() {\n        return this.width;\n    }\n    getHeight() {\n        return this.height;\n    }\n    randomize() {\n        for (let i = 0; i < this.height; i++) {\n            for (let j = 0; j < this.width; j++) {\n                const alife = Math.random() >= 0.5;\n                const cell = this.getCellAt(j, i);\n                cell.populated = alife;\n            }\n        }\n    }\n    initializeCells(populated = false) {\n        this.cells = new Array(this.width * this.height).fill(undefined).map(() => new Cell_1.Cell(populated));\n    }\n    getCellAt(x, y) {\n        return this.cells[this.mod(y, this.height) * this.width + this.mod(x, this.width)];\n    }\n    mod(num, mo) {\n        return (num + mo) % mo;\n    }\n}\nexports.World = World;\n\n\n//# sourceURL=webpack://game-of-life/./src/simulation/World.ts?");
 
 /***/ }),
 
